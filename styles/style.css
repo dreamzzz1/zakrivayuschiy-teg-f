@@ -13,7 +13,7 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--main-font, sans-serif);
+  font-family: var(--main-font, fantasy, sans-serif);
   font-size: var(--main-font-size, 18px);
   background-image: var(--page-pattern);
   background-position: center;
@@ -121,6 +121,8 @@
   line-height: 100%;
   text-transform: uppercase;
   mix-blend-mode: hard-light;
+  -webkit-text-stroke: 1px #000;
+  text-shadow: 1px #000;
   opacity: 0.5;
   z-index: 1;
 }
@@ -157,6 +159,7 @@
   background-color: transparent;
   cursor: pointer;
   transition: outline 0.3s ease;
+  border: none;
 }
 
 .button {
@@ -198,10 +201,12 @@
 
 .card__icon-button:focus {
   outline: none;
+  border: none;
 }
 
 .card__icon-button:focus-visible {
-  outline: 2px solid var(--accent-color, #000);
+  outline: none;
+  border: none;
 }
 
 .button:focus-visible {
