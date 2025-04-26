@@ -110,9 +110,11 @@
   filter: hue-rotate(150deg) saturate(390%);
 }
 
-@supports (-webkit-text-stroke: 1px #000) {
+@supports ((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
   .text-image {
-    -webkit-text-stroke: 1px #000;
+    -webkit-text-stroke: 1px #fff;
+    text-stroke: 1px #fff;
+    text-shadow: none;
   }
 }
 
@@ -165,18 +167,19 @@
   justify-content: center;
   background-color: transparent;
   cursor: pointer;
-  transition: border-color 0.3s ease;
   border: 2px solid transparent;
+  transition: border-color 0.3s ease;
 }
 
 .card__icon-button:focus {
-  outline: none; 
+  outline: none;
 }
 
 .card__icon-button:focus-visible {
-  border-color: var(--accent-color, #000);
+  padding: 0 0 ;
+  outline: 2px solid var(--accent-color, #000);
+  
 }
-
 
 .button {
   position: relative;
@@ -217,12 +220,10 @@
 
 .card__icon-button:focus {
   outline: none;
-  border: none;
 }
 
 .card__icon-button:focus-visible {
-  outline: none;
-  border: none;
+  outline: 2px solid var(--accent-color, #000);
 }
 
 .button:focus-visible {

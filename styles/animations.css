@@ -14,7 +14,6 @@
   from {
     opacity: 1;
   }
-
   to {
     opacity: 0;
   }
@@ -24,12 +23,10 @@
   from {
     transform: scale(1);
   }
-
   to {
     transform: scale(1.25);
   }
 }
-
 
 .sparks {
   opacity: 0;
@@ -84,11 +81,11 @@
 }
 
 .like-icon.is-liked .heart {
-  animation: heart-scale 0.3s ease-in 0.1s;
+  animation: heart-scale 0.3s ease-in 0.1s forwards;
   transform-origin: 50% 50%;
 }
 
 .like-icon.is-liked .sparks {
-  animation: heart-spark 0.3s ease-in 0.3s;
+  animation: heart-sparks 0.3s ease-in 0.3s forwards;
   transform-origin: 50% 50%;
 }
