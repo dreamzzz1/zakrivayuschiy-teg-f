@@ -110,6 +110,13 @@
   filter: hue-rotate(150deg) saturate(390%);
 }
 
+@supports (-webkit-text-stroke: 1px #000) {
+  .text-image {
+    -webkit-text-stroke: 1px #000;
+  }
+}
+
+
 .text-image {
   position: absolute;
   inset-block-start: 25px;
@@ -121,7 +128,6 @@
   line-height: 100%;
   text-transform: uppercase;
   mix-blend-mode: hard-light;
-  -webkit-text-stroke: 1px #000;
   text-shadow: 1px #000;
   opacity: 0.5;
   z-index: 1;
@@ -156,11 +162,21 @@
 .card__icon-button {
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: transparent;
   cursor: pointer;
-  transition: outline 0.3s ease;
-  border: none;
+  transition: border-color 0.3s ease;
+  border: 2px solid transparent;
 }
+
+.card__icon-button:focus {
+  outline: none; 
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--accent-color, #000);
+}
+
 
 .button {
   position: relative;
